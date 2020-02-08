@@ -11,7 +11,7 @@ import java.util.Scanner;
  * @author Alumno
  */
 public class Zoologico {
-    ArrayList<Animal> lista = new ArrayList<Animal>();
+    ArrayList<Animal> lista = new ArrayList<>();
     
     public static void main(String args[]){
         Scanner lector = new Scanner(System.in);
@@ -33,6 +33,10 @@ public class Zoologico {
         }while(opc!=1 && opc!=2 && opc!=3 && opc!=4);
     }
        
+    public void mostrarAnimales(){
+        
+    }
+    
  
     public void añadirAnimal(Animal a){
         Scanner lee = new Scanner(System.in);
@@ -61,6 +65,7 @@ public class Zoologico {
                     
                     System.out.print("Horas de sueño: ");
                     anT.setHorasSueño(lee.nextInt());
+                    lista.add(anT);
                     
                 case 2:
                     Acuatico anA = new Acuatico();
@@ -77,12 +82,13 @@ public class Zoologico {
 
                     System.out.print("Agua dulce o salada?: ");
                     anA.setTipoAmbiente(lee.next());
-                    
+                    //validar ingreso de valores limitados
                     System.out.print("Agresividad: ");
                     anA.setAgresividad(lee.nextByte());
                     
                     System.out.print("cantidad de aletas");
                     anA.setCantAletas(lee.nextInt());
+                    lista.add(anA);
                     
                 case 3:
                     Voladores anV = new Voladores();
@@ -102,7 +108,7 @@ public class Zoologico {
                     
                     System.out.print("tamaño (sea descriptivo): ");
                     anV.setTamaño(lee.next());
-                    
+                    //asignar booleano según respuesta
                     System.out.print("es migrante? (s/n): ");
                     String opc = lee.next();
                     
