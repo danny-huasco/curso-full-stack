@@ -31,7 +31,9 @@ public abstract class Vendedor extends Empleado implements Interface{
         this.area = area;
     }
 
-    public void Imprimir() {
+    
+    @Override
+    public void imprimir() {
         System.out.println(super.toString() + "\n puesto: Vendedor");
     }
     

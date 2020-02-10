@@ -41,7 +41,8 @@ public abstract class Secretario extends Empleado implements Interface {
         this.fax = fax;
     }
 
-    public void Imprimir(){
+    @Override
+    public void imprimir(){
        System.out.println(super.toString() + "\n puesto: Secretario"); 
     }
 
