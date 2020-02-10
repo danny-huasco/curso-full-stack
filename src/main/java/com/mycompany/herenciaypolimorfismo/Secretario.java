@@ -12,7 +12,7 @@ package com.mycompany.herenciaypolimorfismo;
 public abstract class Secretario extends Empleado implements Interface {
     int despacho;
     String fax;
-
+//incrementar salario 5% anual
     public Secretario(int despacho, String fax, String nombre, String apellidos, String DNI, String direccion, String telefono, long salario) {
         super(nombre, apellidos, DNI, direccion, telefono, salario);
         this.despacho = despacho;

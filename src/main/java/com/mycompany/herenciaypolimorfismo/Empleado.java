@@ -104,7 +104,7 @@ public class Empleado {
     
     
     //aumenta slario en base a cantidad de dinero
-    public void incrementarSalario(int num){
+    public void incrementarSalario(long num){
         this.salario = this.salario + num;
     }
     
