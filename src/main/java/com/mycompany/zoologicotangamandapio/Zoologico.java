@@ -11,29 +11,57 @@ import java.util.Scanner;
  * @author Alumno
  */
 public class Zoologico {
-    ArrayList<Animal> lista = new ArrayList<>();
+    static ArrayList<Animal> lista = new ArrayList<>();
     
     public static void main(String args[]){
         Scanner lector = new Scanner(System.in);
         int opc;
-        do{
-        System.out.println("*** Escoja una opción ***");
-        System.out.println("1.- Añadir Animal \n2.- Mostrar animales \n3.- Resumen \n4.- Salir");
-        opc = lector.nextInt();
         
-           if(opc!=1 && opc!=2 && opc!=3 && opc!=4){
-               System.out.println("Opción incorrecta \n intentelo de nuevo");
-           }else{
-               switch(opc){
-                   case 1:
-                       Animal nuevo = new Animal();
-                       
-               }
-           } 
+        do{
+            System.out.println("*** Escoja una opción ***");
+            System.out.println("1.- Añadir Animal \n2.- Mostrar animales \n3.- Resumen \n4.- Salir");
+            opc = lector.nextInt();
+
+               if(opc!=1 && opc!=2 && opc!=3 && opc!=4){
+                   System.out.println("Opción incorrecta \n intentelo de nuevo");
+               }else{
+                   switch(opc){
+                       case 1:
+                           Animal nuevo = new Animal();
+                          añadirAnimal(nuevo);
+                          opc = decision(opc);
+                          break;
+                       case 2:
+                           mostrarAnimales();
+                           opc = decision(opc);
+                           break;
+                       case 3:
+                           resumen();
+                           opc = decision(opc);
+                           break;
+                       case 4:
+                           break;
+                    }
+               } 
         }while(opc!=1 && opc!=2 && opc!=3 && opc!=4);
     }
        
-    public void resumen(){
+    public static int decision(int opc){
+        Scanner reader = new Scanner(System.in);
+        
+        System.out.println("desea ejecutar otra opción? (s/n)");
+        String dec = reader.next();
+        
+        if(dec.equals("s") || dec.equals("S")){
+            
+        }else{
+            opc = 0;
+        }
+        
+        return opc;
+    }
+    
+    public static void resumen(){
         int contT = 0;
         int contA = 0;
         int contV = 0;
@@ -58,7 +86,7 @@ public class Zoologico {
         }
     }
     
-    public void mostrarAnimales(){
+    public static void mostrarAnimales(){
         Scanner lctr = new Scanner(System.in);
         int c;
         if(lista.isEmpty()){                    //en caso de no haber instancias, se informa por pantalla
@@ -99,7 +127,7 @@ public class Zoologico {
     }
     
  
-    public void añadirAnimal(Animal a){
+    public static void añadirAnimal(Animal a){
         Scanner lee = new Scanner(System.in);
                             
         System.out.println("\n Qué tipo de animal desea ingresar? (1.terrestre, 2.acuatico, 3.volador)");
@@ -155,7 +183,7 @@ public class Zoologico {
                         }
                     }while(br!=1 && br!=2 && br!=3);
                     
-                    System.out.print("cantidad de aletas");
+                    System.out.print("cantidad de aletas: ");
                     anA.setCantAletas(lee.nextInt());
                     lista.add(anA);
                     break;
