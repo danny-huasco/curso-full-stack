@@ -52,10 +52,11 @@ public class Zoologico {
         System.out.println("desea ejecutar otra opción? (s/n)");
         String dec = reader.next();
         
-        if(dec.equals("s") || dec.equals("S")){
+        if(dec.equals("n") || dec.equals("N")){
             
         }else{
             opc = 0;
+            
         }
         
         return opc;
@@ -137,13 +138,13 @@ public class Zoologico {
                     Terrestre anT = new Terrestre();
                     System.out.println("ingrese los siguientes atributos:");
                     
-                    System.out.print("\n Nombre: ");
+                    System.out.print("Nombre: ");
                     anT.setNombre(lee.next());
         
-                    System.out.print("\n Pais de origen: ");
+                    System.out.print("Pais de origen: ");
                     anT.setPais(lee.next());
 
-                    System.out.print("\n fecha de ingreso: ");
+                    System.out.print("fecha de ingreso: ");
                     anT.setFechaIngreso(lee.next());
 
                     System.out.print("Cantidad de patas: ");
@@ -155,18 +156,19 @@ public class Zoologico {
                     System.out.print("Horas de sueño: ");
                     anT.setHorasSueño(lee.nextInt());
                     lista.add(anT);
+                    System.out.println("ingreso exitoso\n\n\n");
                     break;
                 case 2:
                     Acuatico anA = new Acuatico();
                     System.out.println("ingrese los siguientes atributos:");
                     
-                    System.out.print("\n Nombre: ");
+                    System.out.print("Nombre: ");
                     anA.setNombre(lee.next());
         
-                    System.out.print("\n Pais de origen: ");
+                    System.out.print("Pais de origen: ");
                     anA.setPais(lee.next());
         
-                    System.out.print("\n fecha de ingreso: ");
+                    System.out.print("fecha de ingreso: ");
                     anA.setFechaIngreso(lee.next());
 
                     System.out.print("Agua dulce o salada?: ");
@@ -186,6 +188,7 @@ public class Zoologico {
                     System.out.print("cantidad de aletas: ");
                     anA.setCantAletas(lee.nextInt());
                     lista.add(anA);
+                    System.out.println("ingreso exitoso\n\n\n");
                     break;
                 case 3:
                     Voladores anV = new Voladores();
@@ -210,7 +213,7 @@ public class Zoologico {
                     String opc;
                     do{
                         opc = lee.next();
-                        if(opc!="s" && opc!="n"){
+                        if(!opc.equals("s") && !opc.equals("n")){
                             System.out.println("ingrese una opción valida (s/n)");
                         }else{
                             if(opc.equals("s") || opc.equals("S")){
@@ -219,7 +222,9 @@ public class Zoologico {
                                 anV.setMigrante(false);
                             }                                
                         }
-                    }while(opc!="s" && opc!="n");
+                    }while(!opc.equals("s") && !opc.equals("n"));
+                    lista.add(anV);
+                    System.out.println("ingreso exitoso\n\n\n");
                     break;
                 default:
                     System.out.println("opción incorrecta");
