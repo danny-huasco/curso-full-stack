@@ -70,7 +70,8 @@ public abstract class Vendedor extends Empleado implements Interface{
         
     }
     //idear manera de manejar un array de coches disponibles para uso del personal
-    public void cambiarCoche(Coche c){
-        this.c = c;
+    public void cambiarCoche(String matricula){
+        //buscar matricula en lista de coches y si está, asignar. sino, dar opción de agregar nuevo coche.
+        //reemplazar por coche y liberar coche que estaba siendo usado.
     }
 }
